@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.version     = "1.0" 
   s.authors     = ["ian_mcdowell"]
   s.email       = ["mcdow.ian@gmail.com"]
-  s.homepage    = ["www.ianmcdowell.net"]
+  s.homepage    = ""
   s.summary     = %q{Siri Google Voice Plugin}
   s.description = %q{This plugin allows you to send Google Voice SMS messages using Siri. }
 

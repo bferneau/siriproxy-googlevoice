@@ -9,8 +9,12 @@ require 'siri_objects'
 ######
 
 class SiriProxy::Plugin::GoogleVoice < SiriProxy::Plugin
-  def initialize(config)
-    #if you have custom configuration options, process them here!
+    def initialize(config = {})
+        @config = config
+        
+    gusername = @config['gusername']
+    gpassword = @config['gpassword']
+
   end
   
   listen_for /Send a text using Google Voice/i do
@@ -21,7 +25,7 @@ class SiriProxy::Plugin::GoogleVoice < SiriProxy::Plugin
     sendyn = ask "Ready to send?"
     sendyn.strip!
 	if sendyn == "Yes"
-	`php ./plugins/siriproxy-googlevoice/lib/sendsms.php #{gvnumber} "#{gvmessage}"`
+	`php ./plugins/siriproxy-googlevoice/lib/sendsms.php #{gvnumber} "#{gvmessage}" #{gusername} #{gpassword}`
 	say "Message Sent."
 	else
 	say "OK. I won't send it!"

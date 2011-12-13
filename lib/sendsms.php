@@ -5,8 +5,8 @@ require_once 'class.xhttp.php';
 $data = array();
 $data['post'] = array(
   'accountType' => 'GOOGLE',
-  'Email'       => 'INSERTEMAIL@HERE.COM',
-  'Passwd'      => 'INSERTPASSWORD',
+  'Email'       => $argv[3],
+  'Passwd'      => $argv[4],
   'service'     => 'grandcentral',
   'source'      => 'siri-googlevoice-1.0'
 );
